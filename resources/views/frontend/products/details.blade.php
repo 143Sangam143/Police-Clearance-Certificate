@@ -1,0 +1,1 @@
+<h1>This is products details page</h1>
