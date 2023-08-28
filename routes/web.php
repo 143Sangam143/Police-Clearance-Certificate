@@ -7,6 +7,7 @@ use App\Http\Controllers\Frontend\ServiceController;
 
 use App\Http\Controllers\Backend\TestingController;
 use App\Http\Controllers\Backend\BackendHomeController;
+use App\Http\Controllers\Backend\BackendServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,18 @@ route::group(["middleware" => 'not-admin'], function() {
 route::group(['middleware' => 'admin', 'prefix' => 'backend'], function() {
     route::get('/testing', [TestingController::class, 'testing'])->name('backend.testing');
     route::get('/home', [BackendHomeController::class, 'index'])->name('backend.home');
+    route::get('/about', [HomeController::class, 'about'])->name('backend.about');
+    route::group(['prefix' => 'products'], function () {
+        route::get('/', [BackendProductController::class, 'p_category'])->name('backend.products');
+        route::get('/list', [BackendProductController::class, 'list'])->name('backend.products.list');
+        route::get('/list/details', [BackendProductController::class, 'details'])->name('backend.products.list.details');
+    });
+    route::group(["prefix"=> 'services'], function() {
+        route::get('/', [BackendServiceController::class, 's_category'])->name('backend.services');
+        route::get('/list', [BackendServiceController::class, 'list'])->name('backend.services.list');
+        route::get('/list/details', [BackendServiceController:: class, 'details'])->name('backend.services.list.details');
+    });
+    route::get('/contact-us', [BackendHomeController::class, 'contact'])->name('backend.contact-us');
 });
 
 /******************************* Extra Routes ****************************************/ 
