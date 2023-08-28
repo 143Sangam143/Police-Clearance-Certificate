@@ -59,5 +59,3 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
-
-/******************************* Routes Ends ****************************************/ 
