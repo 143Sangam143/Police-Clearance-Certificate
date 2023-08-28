@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Http\Controllers\Backend;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class BackendHomeController extends Controller
+class BackendServiceController extends Controller
 {
-    public function index()
+    public function s_category()
     {
-        return view('backend.home');
+        return view('backend.services');
     }
 }
