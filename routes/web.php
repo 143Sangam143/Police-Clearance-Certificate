@@ -5,10 +5,11 @@ use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ProductController;
 use App\Http\Controllers\Frontend\ServiceController;
 
-use App\Http\Controllers\Backend\TestingController;
 use App\Http\Controllers\Backend\BackendHomeController;
 use App\Http\Controllers\Backend\BackendServiceController;
 use App\Http\Controllers\Backend\BackendServiceListController;
+use App\Http\Controllers\Backend\BackendProductController;
+use App\Http\Controllers\Backend\BackendProductListController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,20 +28,20 @@ Route::get('/', function () {
 })->name('home');
 route::get('/home', [HomeController::class, 'userfront']);
 
-
 /******************************* User Routes ****************************************/ 
 route::group(["middleware" => 'not-admin'], function() {
     route::get('/', [HomeController::class, 'index'])->name('home');
     route::get('/about', [HomeController::class, 'about'])->name('about');
     route::group(['prefix' => 'products'], function () {
         route::get('/', [ProductController::class, 'p_category'])->name('products');
-        route::get('/list', [ProductController::class, 'list'])->name('products.list');
-        route::get('/list/details', [ProductController::class, 'details'])->name('products.list.details');
+        route::get('/list/{category}', [ProductController::class, 'list'])->name('products.list');
+        route::get('/list/{category}/details', [ProductController::class, 'details'])->name('products.list.details');
     });
     route::group(['prefix' => 'services'], function () {
         route::get('/', [ServiceController::class, 's_category'])->name('services');
-        route::get('/list', [ServiceController::class, 'list'])->name('services.list');
-        route::get('/list/details', [ServiceController::class, 'details'])->name('services.list.details');
+        route::get('/list/{category}', [ServiceController::class, 'list'])->name('services.list');
+        // route::get('/list/{category}/details', [ServiceController::class, 'details'])->name('services.list.details')->middleware('user');
+        route::get('/list/{category}/details', [ServiceController::class, 'details'])->name('services.list.details');
     });
     route::get('/contact-us', [HomeController::class, 'contact'])->name('contact-us');
 });
@@ -49,11 +50,26 @@ route::group(["middleware" => 'not-admin'], function() {
 route::group(['middleware' => 'admin', 'prefix' => 'backend'], function() {
     route::get('/home', [BackendHomeController::class, 'index'])->name('backend.home');
     route::get('/about', [HomeController::class, 'about'])->name('backend.about');
-    route::group(['prefix' => 'products'], function () {
-        route::get('/', [BackendProductController::class, 'p_category'])->name('backend.products');
-        route::get('/list', [BackendProductController::class, 'list'])->name('backend.products.list');
-        route::get('/list/details', [BackendProductController::class, 'details'])->name('backend.products.list.details');
+
+    route::group(["prefix"=> 'products'], function() {
+        route::group(["prefix" => 'category'], function() {
+            route::get('/', [BackendProductController::class, 'p_category'])->name('backend.products');
+            route::post('/', [BackendProductController::class, 'add_category'])->name('backend.products.category.add');
+            route::get('/delete_category/{id}', [BackendProductController::class, 'delete_category'])->name('backend.products.category.delete');
+            route::get('/update_category/{id}', [BackendProductController::class, 'update_category'])->name('backend.products.category.update');
+            route::post('/update_category_confirm/{id}', [BackendProductController::class, 'update_category_confirm'])->name('backend.products.category.update-confirm');
+        });
+
+        route::group(["prefix" => 'lists'], function() {
+            route::get('/{category}', [BackendProductListController::class, 'p_list'])->name('backend.products.list');
+            route::post('/', [BackendProductListController::class, 'add_list'])->name('backend.products.list.add');
+            route::get('/delete_list/{id}', [BackendProductListController::class, 'delete_list'])->name('backend.products.list.delete');
+            route::get('/update_list/{id}', [BackendProductListController::class, 'update_list'])->name('backend.products.list.update');
+            route::post('/update_list_confirm/{id}', [BackendProductListController::class, 'update_list_confirm'])->name('backend.products.list.update-confirm');
+        });    
+        route::get('/list/details', [BackendProductController:: class, 'details'])->name('backend.products.list.details');
     });
+
     route::group(["prefix"=> 'services'], function() {
         route::group(["prefix" => 'category'], function() {
             route::get('/', [BackendServiceController::class, 's_category'])->name('backend.services');
@@ -69,14 +85,8 @@ route::group(['middleware' => 'admin', 'prefix' => 'backend'], function() {
             route::get('/delete_list/{id}', [BackendServiceListController::class, 'delete_list'])->name('backend.services.list.delete');
             route::get('/update_list/{id}', [BackendServiceListController::class, 'update_list'])->name('backend.services.list.update');
             route::post('/update_list_confirm/{id}', [BackendServiceListController::class, 'update_list_confirm'])->name('backend.services.list.update-confirm');
-        });
-        
-        
-
-        
+        });    
         route::get('/list/details', [BackendServiceController:: class, 'details'])->name('backend.services.list.details');
-        
-        
     });
     route::get('/contact-us', [BackendHomeController::class, 'contact'])->name('backend.contact-us');
 });

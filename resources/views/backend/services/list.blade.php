@@ -1,5 +1,5 @@
 <div class="min-h-screen !bg-fixed !bg-no-repeat !bg-center !bg-cover pt-[8rem] pb-[3rem] space-y-[1.5rem]" style="background-image:url('/frontend/images/services/services-bg.png');">
-    <h1 class="font-bold text-[2.2rem] text-white text-center">{{ $services }}</h1>
+    <h1 class="font-bold text-[2.2rem] text-white text-center capitalize">{{ $services }}</h1>
     <div class="grid grid-cols-1 items-center justify-center px-[5%] 2xl:px-[10vw]">
         <a  href="{{ route('backend.services') }}" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-fit px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
             back
