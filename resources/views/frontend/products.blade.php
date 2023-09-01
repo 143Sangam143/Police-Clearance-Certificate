@@ -17,6 +17,7 @@
         @include('frontend.products.landing')
         @include('frontend.products.category')
     @elseif (\Route::current()->getName() == 'products.list')
+        @include('frontend.products.landing')
         @include('frontend.products.list')
     @elseif (\Route::current()->getName() == 'products.list.details')
         @include('frontend.products.details')

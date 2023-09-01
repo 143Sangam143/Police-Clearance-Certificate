@@ -1,1 +1,1 @@
-<h1>This is details view</h1>
+<h1>This is details view of service</h1>
