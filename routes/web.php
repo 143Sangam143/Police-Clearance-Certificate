@@ -47,7 +47,6 @@ route::group(["middleware" => 'not-admin'], function() {
 
 /******************************* Admin Routes ****************************************/ 
 route::group(['middleware' => 'admin', 'prefix' => 'backend'], function() {
-    route::get('/testing', [TestingController::class, 'testing'])->name('backend.testing');
     route::get('/home', [BackendHomeController::class, 'index'])->name('backend.home');
     route::get('/about', [HomeController::class, 'about'])->name('backend.about');
     route::group(['prefix' => 'products'], function () {
