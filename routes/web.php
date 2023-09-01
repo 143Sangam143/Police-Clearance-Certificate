@@ -8,6 +8,7 @@ use App\Http\Controllers\Frontend\ServiceController;
 use App\Http\Controllers\Backend\TestingController;
 use App\Http\Controllers\Backend\BackendHomeController;
 use App\Http\Controllers\Backend\BackendServiceController;
+use App\Http\Controllers\Backend\BackendServiceListController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,9 +56,28 @@ route::group(['middleware' => 'admin', 'prefix' => 'backend'], function() {
         route::get('/list/details', [BackendProductController::class, 'details'])->name('backend.products.list.details');
     });
     route::group(["prefix"=> 'services'], function() {
-        route::get('/', [BackendServiceController::class, 's_category'])->name('backend.services');
-        route::get('/list', [BackendServiceController::class, 'list'])->name('backend.services.list');
+        route::group(["prefix" => 'category'], function() {
+            route::get('/', [BackendServiceController::class, 's_category'])->name('backend.services');
+            route::post('/', [BackendServiceController::class, 'add_category'])->name('backend.services.category.add');
+            route::get('/delete_category/{id}', [BackendServiceController::class, 'delete_category'])->name('backend.services.category.delete');
+            route::get('/update_category/{id}', [BackendServiceController::class, 'update_category'])->name('backend.services.category.update');
+            route::post('/update_category_confirm/{id}', [BackendServiceController::class, 'update_category_confirm'])->name('backend.services.category.update-confirm');
+        });
+
+        route::group(["prefix" => 'lists'], function() {
+            route::get('/{category}', [BackendServiceListController::class, 's_list'])->name('backend.services.list');
+            route::post('/', [BackendServiceListController::class, 'add_list'])->name('backend.services.list.add');
+            route::get('/delete_list/{id}', [BackendServiceListController::class, 'delete_list'])->name('backend.services.list.delete');
+            route::get('/update_list/{id}', [BackendServiceListController::class, 'update_list'])->name('backend.services.list.update');
+            route::post('/update_list_confirm/{id}', [BackendServiceListController::class, 'update_list_confirm'])->name('backend.services.list.update-confirm');
+        });
+        
+        
+
+        
         route::get('/list/details', [BackendServiceController:: class, 'details'])->name('backend.services.list.details');
+        
+        
     });
     route::get('/contact-us', [BackendHomeController::class, 'contact'])->name('backend.contact-us');
 });

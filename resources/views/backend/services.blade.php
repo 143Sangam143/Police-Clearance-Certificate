@@ -15,9 +15,12 @@
 @section('main')
     
     @if(\Route::current()->getName() == 'backend.services')
-        @include('backend.services.landing')
+        @include('backend.services.category')
+    @elseif(\Route::current()->getName() == 'backend.services.category.update')
         @include('backend.services.category')
     @elseif(\Route::current()->getName() == 'backend.services.list')
+        @include('backend.services.list')
+    @elseif(\Route::current()->getName() == 'backend.services.list.update')
         @include('backend.services.list')
     @elseif(\Route::current()->getName() == 'backend.services.list.details')
         @include('backend.services.details')
