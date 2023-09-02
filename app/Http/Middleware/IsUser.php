@@ -20,9 +20,10 @@ class IsUser
     {
         if(Auth::check())
         {
-            $usertype = User::findOrFail(Auth::user());
+            $usertype = User::findOrFail(Auth::user()->id);
             if($usertype->usertype == 0)
             {
+                \session('IsUser', true);
                 return $next($request);
             }
         }
