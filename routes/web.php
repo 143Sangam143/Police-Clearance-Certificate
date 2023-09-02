@@ -40,8 +40,9 @@ route::group(["middleware" => 'not-admin'], function() {
     route::group(['prefix' => 'services'], function () {
         route::get('/', [ServiceController::class, 's_category'])->name('services');
         route::get('/list/{category}', [ServiceController::class, 'list'])->name('services.list');
-        // route::get('/list/{category}/details', [ServiceController::class, 'details'])->name('services.list.details')->middleware('user');
-        route::get('/list/{category}/details', [ServiceController::class, 'details'])->name('services.list.details');
+        route::get('/list/{category}/details', [ServiceController::class, 'details'])->name('services.list.details')->middleware('user');
+        // route::get('/list/{category}/details', [ServiceController::class, 'details'])->name('services.list.details');
+        route::post('/list/{category}/details/add', [ServiceController::class, 'add_report'])->name('services.list.details.add-report');
     });
     route::get('/contact-us', [HomeController::class, 'contact'])->name('contact-us');
 });
