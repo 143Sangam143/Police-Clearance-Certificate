@@ -44,6 +44,7 @@ route::group(["middleware" => 'not-admin'], function() {
         route::get('/list/{category}/details', [ServiceController::class, 'details'])->name('services.list.details')->middleware('user');
         // route::get('/list/{category}/details', [ServiceController::class, 'details'])->name('services.list.details');
         route::post('/list/{category}/details/add', [ServiceController::class, 'add_report'])->name('services.list.details.add-report')->middleware('user');
+        route::get('/list/{category}/details/download', [ServiceController::class, 'download'])->name('services.list.details.download')->middleware('user');
     });
     route::get('/contact-us', [HomeController::class, 'contact'])->name('contact-us');
 });
