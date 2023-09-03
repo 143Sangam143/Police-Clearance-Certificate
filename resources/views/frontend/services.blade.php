@@ -18,6 +18,7 @@
         @include('frontend.services.landing')
         @include('frontend.services.category')
     @elseif(\Route::current()->getName() == 'services.list')
+        @include('frontend.services.landing')
         @include('frontend.services.list')
     @elseif(\Route::current()->getName() == 'services.list.details')
         @include('frontend.services.details')

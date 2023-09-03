@@ -11,16 +11,16 @@
                 <h5 class="uppercase mb-[1.3rem] font-medium text-[1.25rem] text-[#ffc107]">Products</h5>
                 <div class="space-y-[1rem]">
                     <p>
-                        <a href="#" class="text-white no-underline">The Providers</a>
+                        <a href="#" class="text-white no-underline">Laravel</a>
                     </p>
                     <p>
-                        <a href="#" class="text-white no-underline">Creativity</a>
+                        <a href="#" class="text-white no-underline">Tailwind</a>
                     </p>
                     <p>
-                        <a href="#" class="text-white no-underline">Sourcefiles</a>
+                        <a href="#" class="text-white no-underline">Flowbite</a>
                     </p>
                     <p>
-                        <a href="#" class="text-white no-underline">Bootstrap 5 alpha</a>
+                        <a href="#" class="text-white no-underline">Fontawesome</a>
                     </p>
                 </div>
             </div>
@@ -29,16 +29,16 @@
                 <h5 class="uppercase mb-[1.3rem] font-medium text-[1.25rem] text-[#ffc107]">Useful links</h5>
                 <div class="space-y-[1rem]">
                     <p>
-                        <a href="#" class="text-white no-underline">Your Account</a>
+                        <a href="{{ route('about') }}" class="text-white no-underline">About</a>
                     </p>
                     <p>
-                        <a href="#" class="text-white no-underline">Become an Affiliates</a>
+                        <a href="{{ route('products') }}" class="text-white no-underline">Products</a>
                     </p>
                     <p>
-                        <a href="#" class="text-white no-underline">Shippig Rates</a>
+                        <a href="{{ route('services') }}" class="text-white no-underline">Services</a>
                     </p>
                     <p>
-                        <a href="#" class="text-white no-underline">Help</a>
+                        <a href="{{ route('contact-us') }}" class="text-white no-underline">Contact Us</a>
                     </p>
                 </div>
             </div>
@@ -47,16 +47,16 @@
                 <h5 class="uppercase mb-[1.3rem] font-medium text-[1.25rem] text-[#ffc107]">Contact</h5>
                 <div class="space-y-[1rem]">
                     <p>
-                        <i class="fas fa-home mr-3"></i>New York, Ny 22333, US
+                        <i class="fas fa-home mr-3"></i>Kathamndu, Nepal
                     </p>
                     <p>
-                        <i class="fas fa-envelope mr-3"></i>theproviders98@gmail.com
+                        <i class="fas fa-envelope mr-3"></i>ghelper@gmail.com
                     </p>
                     <p>
-                        <i class="fas fa-phone mr-3"></i>92 316234343
+                        <i class="fas fa-phone mr-3"></i>92 12345678
                     </p>
                     <p>
-                        <i class="fas fa-print mr-3"></i>01 134134
+                        <i class="fas fa-print mr-3"></i>01 1234567
                     </p>
                 </div>
             </div>

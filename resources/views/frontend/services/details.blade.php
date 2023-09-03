@@ -319,7 +319,7 @@
                                             <div class="text-[#d01329] text-center">
                                                 <h1 class="text-[.9rem]">Government of Nepal</h1>
                                                 <h1 class="uppercase font-bold text-[1.5rem]">Ministry of Home Affairs</h1>
-                                                <h1 class="uppercase font-bold text-[1.94rem]">Polic Headquarters</h1>
+                                                <h1 class="uppercase font-bold text-[1.94rem]">Police Headquarters</h1>
                                                 <h1 class="font-bold text-[1.3rem]">Crime Investigation Department</h1>
                                                 <p class="text-[.9rem]">Post Box: 407</p>
                                                 <p class="text-[.9rem]">Kathmandu, Nepal</p>
@@ -338,7 +338,7 @@
                                             <div class="text-[.9rem]">
                                                 <h1>Phone:- 00977-1-4412783</h1>
                                                 <h1>Fax:- 00977-1-4412602</h1>
-                                                <h1>Email:- chalchalan@nepalpolic.gov.np</h1>
+                                                <h1>Email:- chalchalan@nepalpolice.gov.np</h1>
                                                 <div class="flex gap-[.3rem]">
                                                     <h1>Date:- </h1>
                                                     <p class="text-black border-b-2 border-dotted border-[#d01329]">{{$detail->checked_date}}</p>
