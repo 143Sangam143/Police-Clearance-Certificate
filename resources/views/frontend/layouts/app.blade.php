@@ -15,12 +15,12 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <script src="{{asset('/frontend/js/swiper.min.js')}}"></script>
-        <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+        
 
         <!-- Styles -->
         @livewireStyles
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-        <!-- <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"> -->
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
         <link href="{{asset('/frontend/css/swiper.min.css')}}" rel="stylesheet">
     </head>
     <body class="font-sans antialiased">

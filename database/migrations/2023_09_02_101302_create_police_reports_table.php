@@ -41,6 +41,10 @@ return new class extends Migration
             $table->string('list_category')->nullable();
             $table->string('remarks')->nullable();
             $table->string('status')->default('unchecked');
+            $table->string('checked_date')->nullable();
+            $table->string('dispatch')->nullable();
+            $table->string('v_name')->nullable();
+            $table->string('v_post')->nullable();
             $table->timestamps();
         });
     }
