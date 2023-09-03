@@ -273,9 +273,9 @@
                                 <!-- form -4  -->
                                 <div class="form-step hidden">
                                     <div class="flex w-full">
-                                        <input type="email" class="" name="user_email" value="{{$userInfo->email}}">
+                                        <input type="email" class="hidden" name="user_email" value="{{$userInfo->email}}">
                                         
-                                        <input type="text" class="" name="list_category" value="{{$listCategory}}">
+                                        <input type="text" class="hidden" name="list_category" value="{{$listCategory}}">
                                         <button type="button" class="btn-prev flex bg-[#444444] text-white w-fit rounded-md items-center justify-between w-fit p-4 py-1.5 font-medium text-left capitalize rounded-md  dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-800">
                                             <span class="">Prev</span>
                                         </button>
