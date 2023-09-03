@@ -10,6 +10,7 @@ use App\Http\Controllers\Backend\BackendServiceController;
 use App\Http\Controllers\Backend\BackendServiceListController;
 use App\Http\Controllers\Backend\BackendProductController;
 use App\Http\Controllers\Backend\BackendProductListController;
+use App\Http\Controllers\Backend\VerifyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,7 +43,7 @@ route::group(["middleware" => 'not-admin'], function() {
         route::get('/list/{category}', [ServiceController::class, 'list'])->name('services.list');
         route::get('/list/{category}/details', [ServiceController::class, 'details'])->name('services.list.details')->middleware('user');
         // route::get('/list/{category}/details', [ServiceController::class, 'details'])->name('services.list.details');
-        route::post('/list/{category}/details/add', [ServiceController::class, 'add_report'])->name('services.list.details.add-report');
+        route::post('/list/{category}/details/add', [ServiceController::class, 'add_report'])->name('services.list.details.add-report')->middleware('user');
     });
     route::get('/contact-us', [HomeController::class, 'contact'])->name('contact-us');
 });
@@ -50,6 +51,8 @@ route::group(["middleware" => 'not-admin'], function() {
 /******************************* Admin Routes ****************************************/ 
 route::group(['middleware' => 'admin', 'prefix' => 'backend'], function() {
     route::get('/home', [BackendHomeController::class, 'index'])->name('backend.home');
+    route::get('/verify', [VerifyController::class, 'verify'])->name('backend.verify');
+    route::post('/verify/verification/{id}', [VerifyController::class, 'verification'])->name('backend.verify.verification');
     route::get('/about', [HomeController::class, 'about'])->name('backend.about');
 
     route::group(["prefix"=> 'products'], function() {

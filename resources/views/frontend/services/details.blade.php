@@ -38,7 +38,7 @@
                                             <div class="grid grid-cols-1 gap-[2rem] sm:gap-0 sm:grid-cols-2">
                                                 <h3 class="text-[.9rem] sm:text-[1.1rem] text-[#222] text-start px-2">
                                                     <div class="relative z-0">
-                                                        <input type="text" id="first_name" class="block form-one capitalize text-center px-0 w-full text-[.9rem] sm:text-[1.1rem] text-[#222] bg-transparent border-2 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-gray-300 focus:border-b-blue-600 peer" name="first_name" minlength="2" maxlength="50" />
+                                                        <input type="text" id="first_name" class="block form-one capitalize text-center px-0 w-full text-[.9rem] sm:text-[1.1rem] text-[#222] bg-transparent border-2 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-gray-300 focus:border-b-blue-600 peer" name="first_name" minlength="2" maxlength="50" required />
                                                         <label for="first_name" class="absolute text-sm text-gray-500 font-semibold dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 left-2 z-10 origin-[0] peer-focus:left-2 peer-focus:font-semibold peer-focus:text-[#a0a0a0] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 max-[250px]:w-[7rem] bg-white truncate">First Name</label>
                                                     </div>
                                                 </h3>
@@ -92,7 +92,7 @@
                                                 </h3>
                                                 <h3 class="text-[.9rem] sm:text-[1.1rem] text-[#222] text-start px-2 min-[400px]:pt-[2rem] lg:pt-0">
                                                     <div class="relative z-0">
-                                                        <input type="email" id="email" class="block form-one capitalize text-center px-0 w-full text-[.9rem] sm:text-[1.1rem] text-[#222] bg-transparent border-2 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-gray-300 focus:border-b-blue-600 peer" name="email" />
+                                                        <input type="email" id="email" class="block form-one text-center px-0 w-full text-[.9rem] sm:text-[1.1rem] text-[#222] bg-transparent border-2 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-gray-300 focus:border-b-blue-600 peer" name="email" />
                                                         <label for="email" class="absolute text-sm text-gray-500 font-semibold dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 left-2 z-10 origin-[0] peer-focus:left-2 peer-focus:font-semibold peer-focus:text-[#a0a0a0] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 bg-white truncate">Email</label>
                                                     </div>
                                                 </h3>
@@ -143,7 +143,7 @@
                                                 </h3>
                                                 <h3 class="text-[.9rem] sm:text-[1.1rem] text-[#222] text-start px-2">
                                                     <div class="relative z-0">
-                                                        <input type="text" id="citizen_issued_location" class="block form-one capitalize text-center px-0 w-full text-[.9rem] sm:text-[1.1rem] text-[#222] bg-transparent border-2 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-gray-300 focus:border-b-blue-600 peer" name="citizen_issued_location" minlength="2" maxlength="50" />
+                                                        <input type="text" id="citizen_issued_location" class="block form-one capitalize text-center px-0 w-full text-[.9rem] sm:text-[1.1rem] text-[#222] bg-transparent border-2 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-gray-300 focus:border-b-blue-600 peer" placeholder="District only" name="citizen_issued_location" minlength="2" maxlength="50" />
                                                         <label for="citizen_issued_location" class="absolute text-sm text-gray-500 font-semibold dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 left-2 z-10 origin-[0] peer-focus:left-2 peer-focus:font-semibold peer-focus:text-[#a0a0a0] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 max-[250px]:w-[7rem] bg-white truncate">Citizen Issued From</label>
                                                     </div>
                                                 </h3>
@@ -157,7 +157,7 @@
                                                 </h3>
                                                 <h3 class="text-[.9rem] sm:text-[1.1rem] text-[#222] text-start px-2">
                                                     <div class="relative z-0">
-                                                        <input type="text" id="passport_issued_location" class="block form-one capitalize text-center px-0 w-full text-[.9rem] sm:text-[1.1rem] text-[#222] bg-transparent border-2 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-gray-300 focus:border-b-blue-600 peer" name="passport_issued_location" minlength="2" maxlength="50" />
+                                                        <input type="text" id="passport_issued_location" class="block form-one capitalize text-center px-0 w-full text-[.9rem] sm:text-[1.1rem] text-[#222] bg-transparent border-2 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-gray-300 focus:border-b-blue-600 peer" placeholder="District only" name="passport_issued_location" minlength="2" maxlength="50" />
                                                         <label for="passport_issued_location" class="absolute text-sm text-gray-500 font-semibold dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 left-2 z-10 origin-[0] peer-focus:left-2 peer-focus:font-semibold peer-focus:text-[#a0a0a0] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 max-[250px]:w-[7rem] bg-white truncate">Passport Issued From</label>
                                                     </div>
                                                 </h3>
@@ -171,7 +171,7 @@
                                                 </h3>
                                                 <h3 class="text-[.9rem] sm:text-[1.1rem] text-[#222] text-start px-2">
                                                     <div class="relative z-0">
-                                                        <input type="text" id="national_id_issued_location" class="block form-one capitalize text-center px-0 w-full text-[.9rem] sm:text-[1.1rem] text-[#222] bg-transparent border-2 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-gray-300 focus:border-b-blue-600 peer" name="national_id_issued_location" minlength="2" maxlength="50" />
+                                                        <input type="text" id="national_id_issued_location" class="block form-one capitalize text-center px-0 w-full text-[.9rem] sm:text-[1.1rem] text-[#222] bg-transparent border-2 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-gray-300 focus:border-b-blue-600 peer" placeholder="District only" name="national_id_issued_location" minlength="2" maxlength="50" />
                                                         <label for="national_id_issued_location" class="absolute text-sm text-gray-500 font-semibold dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 left-2 z-10 origin-[0] peer-focus:left-2 peer-focus:font-semibold peer-focus:text-[#a0a0a0] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 max-[250px]:w-[7rem] bg-white truncate">National Id Issued From</label>
                                                     </div>
                                                 </h3>
@@ -202,7 +202,7 @@
                                                                         d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                                                                 </svg>
                                                             </div>
-                                                            <input type="file" id="user_image" name="user_image" class="opacity-0" />
+                                                            <input type="file" id="user_image" name="user_image" class="opacity-0 " />
                                                         <label for="user_image" class="absolute text-sm text-gray-500 font-semibold dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 left-2 z-10 origin-[0] peer-focus:left-2 peer-focus:font-semibold peer-focus:text-[#a0a0a0] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 max-[250px]:w-[7rem] bg-white truncate">
                                                             User Image
                                                         </label>
@@ -293,129 +293,139 @@
                         <div class="py-[5rem]">
                             <div class="h-screen bg-gray-100 flex items-center justify-center">
                                 <div class="flex h-full w-full items-center justify-center">
-                                    <h1>No data found under your account in the database.</h1>
+                                    <h1 class="p-5 bg-white shadow-lg">No data found under your account in the database.</h1>
                                 </div>
                                 
                             </div>
                         </div>
-                    @else
-
-                    <div class="py-[1rem] px-[6rem]">
-                        <div class="relative z-[6] pr-[.7rem] pb-[.2rem] space-y-[.5rem]">
-                            <div class="head w-full space-y-[8rem] text-[#d01329]">
-                                <div class="flex justify-between items-start">
-                                    <div class="h-[7rem] w-[6.5rem] pt-[2rem] z-[10]">
-                                        <img src="{{ asset('frontend/images/nepal_logo.png') }}" class="h-full w-full">
-                                    </div>
-                                    <div class="text-[#d01329] text-center">
-                                        <h1 class="text-[.9rem]">Government of Nepal</h1>
-                                        <h1 class="uppercase font-bold text-[1.5rem]">Ministry of Home Affairs</h1>
-                                        <h1 class="uppercase font-bold text-[1.94rem]">Polic Headquarters</h1>
-                                        <h1 class="font-bold text-[1.3rem]">Crime Investigation Department</h1>
-                                        <p class="text-[.9rem]">Post Box: 407</p>
-                                        <p class="text-[.9rem]">Kathmandu, Nepal</p>
-                                        <p class="font-bold">(Character Verification Section)</p>
-                                    </div>
-                                    <div class="h-[7rem] w-[6rem] pt-[2rem] z-[10]">
-                                        <img src="{{ asset('frontend/images/qr.png') }}" class="h-full w-full">
-                                    </div>
-                                </div>
-                                <div class="flex justify-between w-full items-center px-[3rem]">
-                                    <div class="flex gap-[3rem] text-[.9rem]">
-                                        <h1>Dispact No:-</h1>
-                                        <p class="text-black font-bold">2078-504606</p>
-                                    </div>
-                                    
-                                    <div class="text-[.9rem]">
-                                        <h1>Phone:- 00977-1-4412783</h1>
-                                        <h1>Fax:- 00977-1-4412602</h1>
-                                        <h1>Email:- chalchalan@nepalpolic.gov.np</h1>
-                                        <div class="flex gap-[.3rem]">
-                                            <h1>Date:- </h1>
-                                            <p class="text-black border-b-2 border-dotted border-[#d01329]">30 Match 2022</p>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="content w-full">
-                                <h1 class="text-center text-[#d01329] text-[1.8rem] underline italic">Police Clearance Certificate</h1>
-                                <div class="space-y-[2.5rem]">
-                                    <div>
-                                        <div class="flex justify-between">
-                                            <div class="flex gap-[1.6rem]">
-                                                <div class="flex flex-col text-[.9rem] space-y-[.2rem]">
-                                                    <h1 class="font-bold">Full Name:</h1>
-                                                    <h1 class="font-bold">Father Name:</h1>
-                                                    <h1 class="font-bold">Address:</h1>
-                                                    <h1 class="font-bold">Date of birth:</h1>
-                                                    <h1 class="font-bold">Gender:</h1>
-                                                    <h1 class="font-bold">Nationality:</h1>
-                                                    
-                                                </div>
-                                                <div class="flex flex-col text-[.9rem] space-y-[.2rem]">
-                                                    <p>Nijal Subedi Khatri</p>
-                                                    <p>Krishna Bahadur Subedi Khatri</p>
-                                                    <p>Kathmandu 32, Kathmandu, Nepal</p>
-                                                    <p>17 February 1984</p>
-                                                    <p>Male</p>
-                                                    <p>Nepali</p>
-                                                </div>
-                                            </div>
-                                            <div class="z-[10] h-[7rem] w-[7rem]">
-                                                <img src="{{ asset('/frontend/images/profile.png') }}" class="h-full w-full" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="flex justify-between">
-                                            <div class="flex gap-[1rem]">
-                                                <div class="flex flex-col text-[.9rem] space-y-[.2rem]">
-                                                    <h1 class="font-bold">Citizenship No:</h1>
-                                                    <h1 class="font-bold">Passport No:</h1>
-                                                    
-                                                </div>
-                                                <div class="flex flex-col text-[.9rem] space-y-[.2rem]">
-                                                    <p>13212</p>
-                                                    <p>13212</p>
-                                                </div>
-                                            </div>
-                                            <div class="flex gap-[1rem]">
-                                                <div class="flex flex-col text-[.9rem] space-y-[.2rem]">
-                                                    <h1 class="font-bold">Citizenship Issued From:</h1>
-                                                    <h1 class="font-bold">Passport Issued From:</h1>
-                                                    
-                                                </div>
-                                                <div class="flex flex-col text-[.9rem] space-y-[.2rem] w-[8rem]">
-                                                    <p>Kathmandu</p>
-                                                    <p>Embassy of Nepal Paris Seal</p>
-                                                </div>
-                                            </div>
-                                        </div>                            
-                                    </div>
-                                    <div class="w-full text-[.9rem]">
-                                        <h1 class="font-bold">Status:</h1>
-                                        <p>He has no criminal record against him till 26 july 2013, as verified from central police crime database.</p>
-                                    </div>
-                                    <div class="flex flex-col ml-auto items-end w-full text-[.8rem] ">
-                                        <div class="w-fit border-t-2 border-dotted border-black px-[3rem] text-center">
-                                            <h1>Uday Singh Sijapati</h1>
-                                            <p>(Police Inspector)</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr class="h-[.1rem] bg-[#d01329] outline-none border-none w-full"> 
-                            <div class="foot w-full text-[#d01329]">
-                                <h1 class="underline text-[.9rem] font-bold italic">Note:</h1>
-                                <ul class="list-disc text-[.7rem] pl-[1rem]">
-                                    <li><p>To verify this document, visit www.opcr.nepalpolice.gove.np /#/crossVerify or contact PHQ, Character Verification Section.</p></li>
-                                    <li><p>Any erasure or amendment in this certificate makes it invalid.</p></li>
-                                    <li><p>If the details mentioned in this Certificate is forged, the person conduction such forgery shall be liable up to seven years of imprisonment and fine up to seventy thousand rupees pursuant to the Nepal Penal Code 2074(2017)</p></li>
-                                </ul>
-                            </div>
-                            <div class='watermarked' data-watermark='Nepal Police' ></div>
-                        </div>
-                    </div>
                     @endif
+                    @foreach($details as $detail)
+                        @if($detail->status == 'unchecked')
+                            <div class="py-[5rem]">
+                                <div class="h-screen bg-gray-100 flex items-center justify-center">
+                                    <div class="flex h-full w-full items-center justify-center">
+                                        <h1 class="p-5 bg-white shadow-lg">Your data is being verified</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        @else
+                            <div class="py-[1rem] px-[6rem]">
+                                <div class="relative z-[6] pr-[.7rem] pb-[.2rem] space-y-[.5rem]">
+                                    <div class="head w-full space-y-[8rem] text-[#d01329]">
+                                        <div class="flex justify-between items-start">
+                                            <div class="h-[7rem] w-[6.5rem] pt-[2rem] z-[10]">
+                                                <img src="{{ asset('frontend/images/nepal_logo.png') }}" class="h-full w-full">
+                                            </div>
+                                            <div class="text-[#d01329] text-center">
+                                                <h1 class="text-[.9rem]">Government of Nepal</h1>
+                                                <h1 class="uppercase font-bold text-[1.5rem]">Ministry of Home Affairs</h1>
+                                                <h1 class="uppercase font-bold text-[1.94rem]">Polic Headquarters</h1>
+                                                <h1 class="font-bold text-[1.3rem]">Crime Investigation Department</h1>
+                                                <p class="text-[.9rem]">Post Box: 407</p>
+                                                <p class="text-[.9rem]">Kathmandu, Nepal</p>
+                                                <p class="font-bold">(Character Verification Section)</p>
+                                            </div>
+                                            <div class="h-[7rem] w-[6rem] pt-[2rem] z-[10]">
+                                                <img src="{{ asset('frontend/images/qr.png') }}" class="h-full w-full">
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-between w-full items-center px-[3rem]">
+                                            <div class="flex gap-[3rem] text-[.9rem]">
+                                                <h1>Dispact No:-</h1>
+                                                <p class="text-black font-bold">{{$detail->dispatch}}</p>
+                                            </div>
+                                            
+                                            <div class="text-[.9rem]">
+                                                <h1>Phone:- 00977-1-4412783</h1>
+                                                <h1>Fax:- 00977-1-4412602</h1>
+                                                <h1>Email:- chalchalan@nepalpolic.gov.np</h1>
+                                                <div class="flex gap-[.3rem]">
+                                                    <h1>Date:- </h1>
+                                                    <p class="text-black border-b-2 border-dotted border-[#d01329]">{{$detail->checked_date}}</p>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="content w-full">
+                                        <h1 class="text-center text-[#d01329] text-[1.8rem] underline italic">Police Clearance Certificate</h1>
+                                        <div class="space-y-[2.5rem]">
+                                            <div>
+                                                <div class="flex justify-between">
+                                                    <div class="flex gap-[1.6rem]">
+                                                        <div class="flex flex-col text-[.9rem] space-y-[.2rem]">
+                                                            <h1 class="font-bold">Full Name:</h1>
+                                                            <h1 class="font-bold">Father Name:</h1>
+                                                            <h1 class="font-bold">Address:</h1>
+                                                            <h1 class="font-bold">Date of birth:</h1>
+                                                            <h1 class="font-bold">Gender:</h1>
+                                                            <h1 class="font-bold">Nationality:</h1>
+                                                            
+                                                        </div>
+                                                        <div class="flex flex-col text-[.9rem] space-y-[.2rem]">
+                                                            <p class="capitalize">{{$detail->first_name}} {{$detail->last_name}}</p>
+                                                            <p class="capitalize">{{$detail->father_first_name}} {{$detail->father_last_name}}</p>
+                                                            <p class="capitalize">{{$detail->permanent_address}}</p>
+                                                            <p>{{$detail->date_of_birth_bs}}</p>
+                                                            <p class="capitalize">{{$detail->gender}}</p>
+                                                            <p class="capitalize">Nepali</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="z-[10] h-[7rem] w-[7rem]">
+                                                        <img src="{{ asset('/frontend/images/profile.png') }}" class="h-full w-full" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="flex justify-between">
+                                                    <div class="flex gap-[1rem]">
+                                                        <div class="flex flex-col text-[.9rem] space-y-[.2rem]">
+                                                            <h1 class="font-bold">Citizenship No:</h1>
+                                                            <h1 class="font-bold">Passport No:</h1>
+                                                            
+                                                        </div>
+                                                        <div class="flex flex-col text-[.9rem] space-y-[.2rem]">
+                                                            <p>{{$detail->citizen_number}}</p>
+                                                            <p>{{$detail->passport_number}}</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex gap-[1rem]">
+                                                        <div class="flex flex-col text-[.9rem] space-y-[.2rem]">
+                                                            <h1 class="font-bold">Citizenship Issued From:</h1>
+                                                            <h1 class="font-bold">Passport Issued From:</h1>
+                                                            
+                                                        </div>
+                                                        <div class="flex flex-col text-[.9rem] space-y-[.2rem] w-[8rem]">
+                                                            <p class="capitalize">{{$detail->citizen_issued_location}}</p>
+                                                            <p class="capitalize">{{$detail->passport_issued_location}}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>                            
+                                            </div>
+                                            <div class="w-full text-[.9rem]">
+                                                <h1 class="font-bold">Status:</h1>
+                                                <p>{{$detail->remarks}}</p>
+                                            </div>
+                                            <div class="flex flex-col ml-auto items-end w-full text-[.8rem] ">
+                                                <div class="w-fit border-t-2 border-dotted border-black px-[3rem] text-center">
+                                                    <h1>{{$detail->v_name}}</h1>
+                                                    <p>({{$detail->v_post}})</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr class="h-[.1rem] bg-[#d01329] outline-none border-none w-full"> 
+                                    <div class="foot w-full text-[#d01329]">
+                                        <h1 class="underline text-[.9rem] font-bold italic">Note:</h1>
+                                        <ul class="list-disc text-[.7rem] pl-[1rem]">
+                                            <li><p>To verify this document, visit www.opcr.nepalpolice.gove.np /#/crossVerify or contact PHQ, Character Verification Section.</p></li>
+                                            <li><p>Any erasure or amendment in this certificate makes it invalid.</p></li>
+                                            <li><p>If the details mentioned in this Certificate is forged, the person conduction such forgery shall be liable up to seven years of imprisonment and fine up to seventy thousand rupees pursuant to the Nepal Penal Code 2074(2017)</p></li>
+                                        </ul>
+                                    </div>
+                                    <div class='watermarked' data-watermark='Nepal Police' ></div>
+                                </div>
+                            </div>
+                        @endif
+                    @endforeach
                 </div>
             </div>
         </div>

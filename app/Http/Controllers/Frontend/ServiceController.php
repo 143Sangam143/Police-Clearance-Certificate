@@ -50,7 +50,7 @@ class ServiceController extends Controller
         $report->email = $request->email;
         $report->gender = $request->gender;
         $report->temporary_address = $request->temporary_address;
-        $report->permanent_address = $request->permanent_addres;
+        $report->permanent_address = $request->permanent_address;
         $report->citizen_number = $request->citizen_number;
         $report->citizen_issued_location = $request->citizen_issued_location;
         $report->passport_number = $request->passport_number;
@@ -64,7 +64,7 @@ class ServiceController extends Controller
         $user_image = $request->user_image;
         if($user_image){
             $user_imagename = time().'.'.$user_image->getClientOriginalExtension();
-            $request->user_image->move('images/backend/services/details',$user_imagename);
+            $request->user_image->move('images/frontend/documents',$user_imagename);
             $report->user_image = $user_imagename;
         }
         
@@ -72,7 +72,7 @@ class ServiceController extends Controller
         $citizen_card_image = $request->citizen_card_image;
         if($citizen_card_image){
             $citizen_card_imagename = time().'.'.$citizen_card_image->getClientOriginalExtension();
-            $request->citizen_card__image->move('images/backend/services/details',$citizen_card_imagename);
+            $request->citizen_card__image->move('images/frontend/documents',$citizen_card_imagename);
             $report->citizen_card_image = $citizen_card_imagename;
         }
         
@@ -81,14 +81,14 @@ class ServiceController extends Controller
         $passport_card_image = $request->passport_card_image;
         if($passport_card_image){
             $passport_card_imagename = time().'.'.$passport_card_image->getClientOriginalExtension();
-            $request->passport_card_image->move('images/backend/services/details',$passport_card_imagename);
+            $request->passport_card_image->move('images/frontend/documents',$passport_card_imagename);
             $report->passport_card_image = $passport_card_imagename;
         }
 
         $national_id_image = $request->national_id_image;
         if($national_id_image){
             $national_id_imagename = time().'.'.$national_id_image->getClientOriginalExtension();
-            $request->national_id_image->move('images/backend/services/details',$national_id_imagename);
+            $request->national_id_image->move('images/frontend/documents',$national_id_imagename);
             $report->national_id_image = $national_id_imagename;
         }
         
