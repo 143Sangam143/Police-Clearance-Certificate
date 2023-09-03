@@ -9,6 +9,9 @@ use App\Models\Service;
 use App\Models\ServiceList;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Barryvdh\DomPDF\Facade\Pdf;
+
+// use PDF;
 
 class ServiceController extends Controller
 {
@@ -95,5 +98,12 @@ class ServiceController extends Controller
         $report->save();
         return redirect()->route('services')->with('message', 'Report created successfully');
 
+    }
+
+    public function download($id)
+    {
+        // $detail = PoliceReport::find($id);
+        // $pdf = PDF::loadView('frontend.services.pdf', compact('detail'));
+        // return $pdf->download('police_report.pdf');
     }
 }

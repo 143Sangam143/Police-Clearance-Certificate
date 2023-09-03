@@ -423,6 +423,11 @@
                                     </div>
                                     <div class='watermarked' data-watermark='Nepal Police' ></div>
                                 </div>
+                                <!-- <div class="pt-4">
+                                    <a href="{{ route('services.list.details.download' ,  $detail->id) }}" class="mx-auto flex bg-[#444444] text-white w-fit rounded-md items-center justify-between w-fit p-4 py-1.5 font-medium text-left capitalize rounded-md  dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-800">
+                                        <span class="">Downlod</span>
+                                    </a>
+                                </div> -->
                             </div>
                         @endif
                     @endforeach
