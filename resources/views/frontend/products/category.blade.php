@@ -1,4 +1,4 @@
-<div class="min-h-screen !bg-fixed !bg-no-repeat !bg-center !bg-cover pt-[8rem] pb-[3rem] space-y-[1.5rem]" style="background-image:url('/frontend/images/products/products-bg.png');">
+<div class="min-h-screen !bg-fixed !bg-no-repeat !bg-center !bg-cover pt-[8rem] pb-[3rem] space-y-[1.5rem]" style="background: url('/frontend/images/products/background/bg-category-<?php echo rand(1,9) ?>.png');">
     <h1 class="font-bold text-[2.2rem] text-white text-center">Products</h1>
     <div class="grid grid-cols-1 min-[350px]:grid-cols-2 xl:grid-cols-3 items-center justify-center px-[5%] 2xl:px-[10vw] gap-y-[1.5rem] scroll-smooth">
         @foreach($products as $product)
@@ -23,3 +23,21 @@
         @endforeach
     </div>
 </div>
+
+<script type="text/javascript">
+    var imgCount = 3;
+        var dir = 'frontend/images/products/background/';
+        var randomCount = Math.round(Math.random() * (imgCount - 1)) + 1;
+        var images = new Array(
+                    "bg-category-1.png",
+                    "bg-category-2.png",
+                    "bg-category-3.png",
+                    "bg-category-4.png",
+                    "bg-category-5.png",
+                    "bg-category-6.png",
+                    "bg-category-7.png",
+                    "bg-category-8.png",
+                    "bg-category-9.png",
+                );
+        document.getElementById("bg-set").style.backgroundImage = "url(" + dir + images[randomCount] + ")"; 
+</script>

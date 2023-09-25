@@ -36,6 +36,9 @@ route::group(["middleware" => 'not-admin'], function() {
     route::group(['prefix' => 'products'], function () {
         route::get('/', [ProductController::class, 'p_category'])->name('products');
         route::get('/list/{category}', [ProductController::class, 'list'])->name('products.list');
+        route::post('/list/{category}', [ProductController::class, 'cart'])->name('products.cart');
+        route::get('/cartlist', [ProductController::class, 'cartlist'])->name('products.cartlist');
+        route::get('/checkout', [ProductController::class, 'checkout'])->name('products.checkout');
         route::get('/list/{category}/details', [ProductController::class, 'details'])->name('products.list.details');
     });
     route::group(['prefix' => 'services'], function () {
