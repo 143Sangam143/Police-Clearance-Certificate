@@ -1,5 +1,5 @@
 @if(\Route::current()->getName() == 'products')
-<div class="h-screen w-full p-[3rem] min-[200px]:px-[1rem] min-[400px]:p-[3rem] sm:p-[5rem] items-center justify-center flex bg-black">
+<div class="h-screen w-full p-[3rem] min-[200px]:px-[1rem] min-[400px]:p-[3rem] sm:p-[5rem] items-center justify-center flex bg-black !bg-fixed !bg-no-repeat !bg-center !bg-cover"  style="background-image: url('/frontend/images/products/bg-cube-1.png');">
     <div class="h-[45%] min-[200px]:h-[40%] min-[300px]:h-[50%] min-[400px]:h-[60%] sm:h-[60%] md:h-[62%] lg:h-[70%] 2xl:h-[80%] w-full md:w-[75%] lg:w-[70%] xl:w-[50%]">
         <div class="swiper-container h-full w-full mx-auto">
             <div class="swiper-wrapper">
@@ -17,7 +17,7 @@
     </div>
 </div>
 @elseif(\Route::current()->getName() == 'products.list')
-<div class="h-screen w-full p-[3rem] min-[200px]:px-[1rem] min-[400px]:p-[3rem] sm:p-[5rem] items-center justify-center flex bg-black">
+<div class="h-screen w-full p-[3rem] min-[200px]:px-[1rem] min-[400px]:p-[3rem] sm:p-[5rem] items-center justify-center flex bg-black !bg-fixed !bg-no-repeat !bg-center !bg-cover"  style="background-image: url('/frontend/images/products/bg-cube-1.png');">
     <div class="h-[45%] min-[200px]:h-[40%] min-[300px]:h-[50%] min-[400px]:h-[60%] sm:h-[60%] md:h-[62%] lg:h-[70%] 2xl:h-[80%] w-full md:w-[75%] lg:w-[70%] xl:w-[50%]">
         <div class="swiper-container h-full w-full mx-auto">
             <div class="swiper-wrapper">

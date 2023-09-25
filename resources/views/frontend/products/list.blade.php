@@ -1,9 +1,12 @@
-
-<div class="min-h-screen !bg-fixed !bg-no-repeat !bg-center !bg-cover pt-[8rem] pb-[3rem] space-y-[1.5rem]" style="background-image: url('/frontend/images/products/list/list-bg.png')">
-    <h1 class="font-bold text-[2.2rem] text-white text-center">Products</h1>
+<a href="{{ route('products.cartlist') }}" class="fixed right-[1rem] sm:right-[2.5rem] top-[5rem] z-[1100] h-[2.5rem] min-[450px]:h-[3rem] w-[2.5rem] min-[450px]:w-[3rem] cursor-pointer">
+    <img src="{{asset('/frontend/images/cart.png')}}" alt="ToTop" class="">
+</a>
+<div class="min-h-screen !bg-fixed !bg-no-repeat !bg-center !bg-cover pt-[8rem] pb-[3rem] space-y-[1.5rem]" style="background-image: url('/frontend/images/products/background/bg-category-<?php echo rand(1,9)?>.png')" >
+    <h1 class="font-bold text-[2.2rem] text-white text-center">{{$products}}</h1>
     <div class="grid grid-cols-1 min-[350px]:grid-cols-2 xl:grid-cols-3 items-center justify-center px-[5%] 2xl:px-[10vw] gap-y-[1.5rem] scroll-smooth">
     @foreach($lists as $list)
-    <a href="{{ route('products.list.details', $list->category) }}" class="hover:scale-[1.02] group [perspective:1000px]">
+        <div>
+            <a href="{{ route('products.list.details', $list->category) }}" class="hover:scale-[1.02] group [perspective:1000px]">
                 <div class="relative transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                     <div class="w-[8rem] sm:w-[13.8rem] md:w-[19.8rem] !bg-center !bg-cover overflow-hidden rounded-[.7rem] bg-gradient-to-r from-[#f9f9f9]  via-[#ececec] to-[#f8f8f8] border-y-4 border-[#222] ease-linear duration-300 mx-auto">
                         <div class="picture overflow-hidden w-[8rem] sm:w-[13.8rem] md:w-[19.8rem] h-[6rem] sm:h-[13.8rem] md:h-[19.8rem]">
@@ -21,6 +24,19 @@
                     </div>
                 </div>
             </a>
+            <div class="pt-4">
+                <form action="{{route('products.cart', $products)}}" method="post">
+                    @csrf
+                    <input type="text" class="hidden" name="name" value="{{ $list->name }}">
+                    <input type="number" class="hidden" name="price" value="{{ $list->price }}">
+                    <input type="number" class="hidden" name="quantity" value="1">
+                    <input type="text" class="hidden" name="image" value="{{ $list->image }}">
+                    <button type="submit" value="submit" class="btn-next mx-auto flex bg-[#3574d3] text-white w-fit rounded-md items-center justify-between w-fit p-4 py-1.5 font-medium text-left capitalize rounded-md  dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-800">
+                        <span class="">Add to cart</span>
+                    </button>
+                </form>
+            </div>
+        </div>
     @endforeach
     </div>
 </div>

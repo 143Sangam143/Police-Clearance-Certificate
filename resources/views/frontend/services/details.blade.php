@@ -372,7 +372,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="z-[10] h-[7rem] w-[7rem]">
-                                                        <img src="{{ asset('/frontend/images/profile.png') }}" class="h-full w-full" alt="">
+                                                        <img src="/images/frontend/documents/{{$detail->user_image}}" class="h-full w-full" alt="">
                                                     </div>
                                                 </div>
                                                 <div class="flex justify-between">
