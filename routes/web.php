@@ -38,8 +38,8 @@ route::group(["middleware" => 'not-admin'], function() {
         route::get('/list/{category}', [ProductController::class, 'list'])->name('products.list');
         route::post('/list/{category}', [ProductController::class, 'cart'])->name('products.cart');
         route::get('/cartlist', [ProductController::class, 'cartlist'])->name('products.cartlist');
+        route::get('/cartlist/delete/{id}', [ProductController::class, 'cartlist_delete'])->name('products.carlist.delete');
         route::get('/checkout', [ProductController::class, 'checkout'])->name('products.checkout');
-        route::get('/list/{category}/details', [ProductController::class, 'details'])->name('products.list.details');
     });
     route::group(['prefix' => 'services'], function () {
         route::get('/', [ServiceController::class, 's_category'])->name('services');

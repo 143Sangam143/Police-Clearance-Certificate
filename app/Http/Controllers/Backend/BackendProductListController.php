@@ -20,6 +20,7 @@ class BackendProductListController extends Controller
         $lists = new productlist;
         $lists->name = $request->name;
         $lists->description = $request->description;
+        $lists->price = $request->price;
         $lists->category = $request->category;
         $image = $request->image;
         $imagename = time().'.'.$image->getClientOriginalExtension();
@@ -48,6 +49,7 @@ class BackendProductListController extends Controller
         $lists = productlist::find($id);
         $lists->name = $request->name;
         $lists->description = $request->description;
+        $lists->price = $request->price;
         if($request->hasFile('image'))
         {
             $image=$request->image;
