@@ -62,12 +62,14 @@ class ProductController extends Controller
         return view('frontend.products', compact('carts'));
     }
 
-    public function checkout(){
-        return view('frontend.products');
+    public function cartlist_delete($id)
+    {
+        $cart = Cart::find($id);
+        $cart->delete();
+        return redirect()->back();
     }
 
-    public function details()
-    {
+    public function checkout(){
         return view('frontend.products');
     }
 }

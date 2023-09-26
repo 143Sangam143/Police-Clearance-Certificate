@@ -42,6 +42,12 @@
                                     <label for="floating_description" class="absolute text-sm text-gray-500 font-semibold dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 left-2 z-10 origin-[0] peer-focus:left-2 peer-focus:font-semibold peer-focus:text-[#a0a0a0] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 max-sm:w-[5rem] bg-white truncate">Description</label>
                                 </div>
                             </h3>
+                            <h3 class="text-[1rem] sm:text-[1.3rem] text-[#a0a0a0] text-start px-2">
+                                <div class="relative z-0">
+                                    <input type="text" id="floating_price" class="block text-center px-0 w-full text-[1.2rem] sm:text-[1.5rem] text-[#222] bg-transparent border-2 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-gray-300 focus:border-b-blue-600 peer" name="price" minlength="2" maxlength="60" required />
+                                    <label for="floating_price" class="absolute text-sm text-gray-500 font-semibold dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 left-2 z-10 origin-[0] peer-focus:left-2 peer-focus:font-semibold peer-focus:text-[#a0a0a0] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 max-sm:w-[5rem] bg-white truncate">Price</label>
+                                </div>
+                            </h3>
                             <h3 class="hidden text-[1.2rem] sm:text-[1.5rem] text-[#222] text-start px-2">
                                 <div class="relative z-0 hidden">
                                     <input type="text" id="floating_category" class="block capitalize text-center px-0 w-full text-[1.2rem] sm:text-[1.5rem] text-[#222] bg-transparent border-2 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-gray-300 focus:border-b-blue-600 peer" name="category" minlength="2" maxlength="30" required value="{{$products}}" />
@@ -92,6 +98,12 @@
                                         <label for="floating_description" class="absolute text-sm text-gray-500 font-semibold dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 left-2 z-10 origin-[0] peer-focus:left-2 peer-focus:font-semibold peer-focus:text-[#a0a0a0] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 max-sm:w-[5rem] bg-white truncate">Description</label>
                                     </div>
                                 </h3>
+                                <h3 class="text-[1rem] sm:text-[1.3rem] text-[#a0a0a0] text-start px-2">
+                                    <div class="relative z-0">
+                                        <input type="text" id="floating_price" class="block text-center px-0 w-full text-[1.2rem] sm:text-[1.5rem] text-[#222] bg-transparent border-2 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-gray-300 focus:border-b-blue-600 peer" name="price" minlength="2" maxlength="60" required />
+                                        <label for="floating_price" class="absolute text-sm text-gray-500 font-semibold dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 left-2 z-10 origin-[0] peer-focus:left-2 peer-focus:font-semibold peer-focus:text-[#a0a0a0] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 max-sm:w-[5rem] bg-white truncate">Price</label>
+                                    </div>
+                                </h3>
                                 <h3 class="hidden text-[1.2rem] sm:text-[1.5rem] text-[#222] text-start px-2">
                                     <div class="relative z-0 hidden">
                                         <input type="text" id="floating_category" class="hidden block capitalize text-center px-0 w-full text-[1.2rem] sm:text-[1.5rem] text-[#222] bg-transparent border-2 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-gray-300 focus:border-b-blue-600 peer" name="category" minlength="2" maxlength="30" required value="{{$products}}" />
@@ -117,7 +129,7 @@
                                     <hr class="z-10 h-[.1rem] bg-[#ccc]">
                                     <div class="py-[1rem] font-medium font-mono text-center px-5">
                                         <h3 class="text-[1.2rem] sm:text-[1.5rem] text-[#222] truncate first-letter:capitalize">{{ $list->name }}</h3>
-                                        <span class="block text-[1rem] sm:text-[1.3rem] text-[#a0a0a0] first-letter:capitalize truncate">{{ $list->description }}</span>
+                                        <span class="block text-[1rem] sm:text-[1.3rem] text-[#a0a0a0] first-letter:capitalize truncate">{{ $list->price }}</span>
                                     </div>
                                 </div>
                                 <div class="absolute inset-0 h-full w-[8rem] sm:w-[13.8rem] md:w-[19.8rem] overflow-hidden rounded-[.7rem] border-y-4 border-[#222] ease-linear duration-300 mx-auto flex flex-col justify-center items-center text-white bg-[#666] [transform:rotateY(180deg)] [backface-visibility:hidden] px-[.8rem] text-center font-medium font-mono">
@@ -170,6 +182,12 @@
                                 <div class="relative z-0">
                                     <input type="text" id="floating_description" class="block text-center px-0 w-full text-[1.2rem] sm:text-[1.5rem] text-[#222] bg-transparent border-2 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-gray-300 focus:border-b-blue-600 peer" name="description" minlength="2" maxlength="60" required />
                                     <label for="floating_description" class="absolute text-sm text-gray-500 font-semibold dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 left-2 z-10 origin-[0] peer-focus:left-2 peer-focus:font-semibold peer-focus:text-[#a0a0a0] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 max-sm:w-[5rem] bg-white truncate">Description</label>
+                                </div>
+                            </h3>
+                            <h3 class="text-[1rem] sm:text-[1.3rem] text-[#a0a0a0] text-start px-2">
+                                <div class="relative z-0">
+                                    <input type="text" id="floating_price" class="block text-center px-0 w-full text-[1.2rem] sm:text-[1.5rem] text-[#222] bg-transparent border-2 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-gray-300 focus:border-b-blue-600 peer" name="price" minlength="2" maxlength="60" required />
+                                    <label for="floating_price" class="absolute text-sm text-gray-500 font-semibold dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 left-2 z-10 origin-[0] peer-focus:left-2 peer-focus:font-semibold peer-focus:text-[#a0a0a0] peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 max-sm:w-[5rem] bg-white truncate">Price</label>
                                 </div>
                             </h3>
                             <h3 class="hidden text-[1.2rem] sm:text-[1.5rem] text-[#222] text-start px-2">
