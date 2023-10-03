@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\frontend\EsewaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ProductController;
@@ -36,9 +37,14 @@ route::group(["middleware" => 'not-admin'], function() {
     route::group(['prefix' => 'products'], function () {
         route::get('/', [ProductController::class, 'p_category'])->name('products');
         route::get('/list/{category}', [ProductController::class, 'list'])->name('products.list');
-        route::post('/list/{category}', [ProductController::class, 'cart'])->name('products.cart');
+        route::post('/list/{category}/cart', [ProductController::class, 'cart'])->name('products.cart');
         route::get('/cartlist', [ProductController::class, 'cartlist'])->name('products.cartlist');
         route::get('/cartlist/delete/{id}', [ProductController::class, 'cartlist_delete'])->name('products.carlist.delete');
+        route::get('/cartlist/deletebyname/{name}', [ProductController::class, 'cartlist_delete_name'])->name('products.carlist.delete.name');
+        route::post('/cartlist/update', [ProductController::class, 'cartlist_update_quantity'])->name('products.cartlist.update.quantity');
+        route::get('/checkout/success', [EsewaController::class, 'success'])->name('esewa.success');
+        route::get('/checkout/failure', [EsewaController::class, 'failure'])->name('esewa.failure');
+        route::get('/payment/response', [EsewaController::class, 'response'])->name('payment.response');
         route::get('/checkout', [ProductController::class, 'checkout'])->name('products.checkout');
     });
     route::group(['prefix' => 'services'], function () {

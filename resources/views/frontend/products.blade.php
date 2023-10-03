@@ -1,8 +1,11 @@
 @extends('frontend.layouts.app')
 @section('title')
-    Products
     @if (\Route::current()->getName() == 'products.cartlist')
         Shopping
+    @elseif (\Route::current()->getName() == 'payment.response')
+        Payment
+    @else
+        Products
     @endif 
 @endsection
 @section('meta-content')
@@ -10,8 +13,11 @@
         Category
     @elseif (\Route::current()->getName() == 'products.list')
         list
+    @elseif (\Route::current()->getName() == 'products.cart')
     @elseif (\Route::current()->getName() == 'products.cartlist')
         Cart
+    @elseif (\Route::current()->getName() == 'payment.response')
+        Response
     @elseif (\Route::current()->getName() == 'products.checkout')
         Checkout
     @endif   
@@ -21,14 +27,15 @@
     @if (\Route::current()->getName() == 'products') 
         @include('frontend.products.landing')
         @include('frontend.products.category')
-    @elseif ((\Route::current()->getName() == 'products.list') || (\Route::current()->getName() == 'products.cart'))
+    @elseif ((\Route::current()->getName() == 'products.list'))
+        @include('frontend.products.landing')
+        @include('frontend.products.list')
+    @elseif ((\Route::current()->getName() == 'products.cart'))
         @include('frontend.products.landing')
         @include('frontend.products.list')
     @elseif (\Route::current()->getName() == 'products.cartlist')
         @include('frontend.products.cartlist')
-    @elseif (\Route::current()->getName() == 'products.checkout')
-        @include('frontend.products.checkout')
-    @elseif (\Route::current()->getName() == 'products.list.details')
-        @include('frontend.products.details')
+    @elseif (\Route::current()->getName() == 'payment.response')
+        @include('frontend.products.response')
     @endif
 @endsection

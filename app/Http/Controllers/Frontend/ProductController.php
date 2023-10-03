@@ -19,20 +19,26 @@ class ProductController extends Controller
 
     public function list($category)
     {
-        $products = $category;
         $lists = ProductList::where('category',$category)->get()->all();
-        if(!$lists){
-            return redirect()->route('products')->with('message', 'products will be avialable soon');
+        if(Cart::exists()){
+            $addCarts = Cart::get()->all();
         }
-        return view('frontend.products', compact('lists', 'products'));
+        else{
+            $addCarts = 0;
+        }
+        if(!$lists){
+            return redirect()->route('frontend.products')->with('message', 'products will be avialable soon');
+        }
+        return view('frontend.products', compact('lists', 'category', 'addCarts'));
     }
 
-    public function cart(Request $request, $products){
-        $lists = ProductList::where('category', $products)->get()->all();
+    public function cart(Request $request, $category){
+        $lists = ProductList::where('category', $category)->get()->all();
+        $addCarts = Cart::get()->all();
         if(Cart::exists()){
             $name = $request->name;
             if(Cart::where('item_name', $name)->exists()){
-                return view('frontend.products', compact('lists','products'));
+                return view('frontend.products', compact('lists','category', 'addCarts'));
             }
             else{
                 $carts = new Cart;
@@ -41,7 +47,7 @@ class ProductController extends Controller
                 $carts->price = $request->price;
                 $carts->quantity = $request->quantity;
                 $carts->save();
-                return view('frontend.products', compact('lists','products'));
+                return view('frontend.products', compact('lists','category', 'addCarts'));
             }
         }
         else{
@@ -52,7 +58,7 @@ class ProductController extends Controller
             $carts->price = $request->price;
             $carts->quantity = $request->quantity;
             $carts->save();
-            return view('frontend.products', compact('lists','products'));
+            return view('frontend.products', compact('lists','category', 'addCarts'));
         }
         
     }
@@ -69,7 +75,15 @@ class ProductController extends Controller
         return redirect()->back();
     }
 
-    public function checkout(){
-        return view('frontend.products');
+    public function cartlist_delete_name($name)
+    {
+        $cart = Cart::where('item_name',$name);
+        $cart->delete();
+        return redirect()->back();
+    }
+
+    public function cartlist_update_quantity(Request $request)
+    {
+        $quantity = $request->get('quantity');
     }
 }
