@@ -26,19 +26,21 @@
 
                                             <h1 class="text-[.7rem] xs:text-[.9rem] font-semibold text-[#374151]">{{ $cart->item_name }}</h1>
                                             <div class="flex flex-col space-y-[.7rem] md:mx-auto">
-                                                <select name="quantity" class="text-[#374151] text-[.7rem] xs:text-[.9rem] font-semibold border-[#d1d5db] rounded-[.4rem] py-[.15rem] xs:py-[.25rem] shadow-sm px-[.55rem] xs:px-[.75rem] mr-[.25rem] w-fit">
+                                                <select name="quantity" value="quantity" data-url="{{ url('/products') }}" data-token="{{ csrf_token() }}" class="text-[#374151] text-[.7rem] xs:text-[.9rem] font-semibold border-[#d1d5db] rounded-[.4rem] py-[.15rem] xs:py-[.25rem] shadow-sm px-[.55rem] xs:px-[.75rem] mr-[.25rem] w-fit">
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
                                                     <option value="3">3</option>
                                                     <option value="4">4</option>
                                                     <option value="5">5</option>
                                                 </select>
+                                                {{$cart->quantity}}
                                                 <a href="{{ route('products.carlist.delete', $cart->id) }}" class="text-[.7rem] xs:text-[.9rem] font-semibold text-[#3574d3] max-lg:hidden">Remove</a>
                                             </div>
+                                            @php ($cart->price = $cart->price * $cart->quantity)
                                             <span class="text-[.7rem] xs:text-[.9rem] font-semibold text-[#374151] md:ml-auto">Rs. {{ $cart->price }}/-</span>
                                         </div>
                                         <span class="text-[.7rem] xs:text-[.9rem] text-black font-medium">Avialable</span>
-                                        <a href="#" class="text-[.7rem] xs:text-[.9rem] font-semibold text-[#3574d3] lg:hidden">Remove</a>
+                                        <a href="{{ route('products.carlist.delete', $cart->id) }}" class="text-[.7rem] xs:text-[.9rem] font-semibold text-[#3574d3] lg:hidden">Remove</a>
                                     </div>
                                 </div>
                                 <hr class="h-[1rem]">
@@ -71,7 +73,20 @@
                             </div>
                         </div>
                         <div class="flex flex-col space-y-[.3rem]">
-                            <a href="{{ route('products.checkout') }}" class="w-full text-center text-white bg-blue-700 font-semibold hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-[.7rem] xs:text-[.95rem] px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Checkout</a>
+                            <div>
+                                <form action="https://uat.esewa.com.np/epay/main" method="POST">
+                                    <input value="{{$total}}" name="tAmt" type="hidden">
+                                    <input value="{{$subtotal}}" name="amt" type="hidden">
+                                    <input value="{{$taxamount}}" name="txAmt" type="hidden">
+                                    <input value="0" name="psc" type="hidden">
+                                    <input value="{{$shipping}}" name="pdc" type="hidden">
+                                    <input value="EPAYTEST" name="scd" type="hidden">
+                                    <input value="ee2c3ca1-696b-4cc5-a6be-2c40d929d453" name="pid" type="hidden">
+                                    <input value="{{ route('esewa.success') }}" type="hidden" name="su">
+                                    <input value="{{ route('esewa.failure') }}" type="hidden" name="fu">
+                                    <button type="submit" class="w-full text-center text-white bg-blue-700 font-semibold hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-[.7rem] xs:text-[.95rem] px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Checkout</button>
+                                </form>
+                            </div>
                             <p class="text-center text-[#4b5563]">or</p>
                             <a href="{{ url()->previous() }}" class="text-blue-700 max-2xs:text-[.8rem] max-xs:text-[.85rem] xs:text-[.9rem] font-medium text-center w-full">Continue Shopping</a>
                         </div>
@@ -83,3 +98,20 @@
         </div>
     </div>
 </div>
+
+<script>
+    $('select').on('change',function(){
+        var quantity =  $( "select option:selected" ).val();
+        var token = $(this).data('token');
+        var base_url = $(this).data('url');
+            $.ajax({
+                url:base_url+'/cartlist/update',
+                type: 'POST',
+                data: { _token :token,quantity:quantity },
+                success:function(msg){
+                alert("success");
+                }
+            });
+
+    })
+</script>
