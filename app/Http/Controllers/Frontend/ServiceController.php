@@ -75,7 +75,7 @@ class ServiceController extends Controller
         $citizen_card_image = $request->citizen_card_image;
         if($citizen_card_image){
             $citizen_card_imagename = time().'.'.$citizen_card_image->getClientOriginalExtension();
-            $request->citizen_card__image->move('images/frontend/documents',$citizen_card_imagename);
+            $request->citizen_card_image->move('images/frontend/documents',$citizen_card_imagename);
             $report->citizen_card_image = $citizen_card_imagename;
         }
         

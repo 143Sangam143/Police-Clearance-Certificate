@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\ProductList;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class BackendProductController extends Controller
 {
@@ -34,9 +35,14 @@ class BackendProductController extends Controller
     public function delete_category($id)
     {
         $products = product::find($id);
+        $category_image = $products->image;
+        $category = strtolower($products->category);
         $products->delete();
+        $image_path = 'images/backend/products/category/'.$category_image; 
+        if (File::exists($image_path)) {
+            File::delete($image_path);
+        }
         return redirect()->back();
-
     }
 
     public function update_category($id)

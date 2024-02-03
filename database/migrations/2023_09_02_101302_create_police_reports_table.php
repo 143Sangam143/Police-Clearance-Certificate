@@ -34,8 +34,8 @@ return new class extends Migration
             
             $table->string('user_image')->nullable();
             $table->string('citizen_card_image')->nullable();
-            $table->string('passport_card_mage')->nullable();
-            $table->string('national_id_imagename')->nullable();
+            $table->string('passport_card_image')->nullable();
+            $table->string('national_id_image')->nullable();
             
             $table->string('user_email')->nullable();
             $table->string('list_category')->nullable();
